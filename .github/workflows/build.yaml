@@ -26,3 +26,7 @@ jobs:
       - run: npm i
       - run: gulp bundle
 
+      - uses: actions/upload-artifact@v2
+        with:
+          name: ui-bundle
+          path: build/ui-bundle.zip
