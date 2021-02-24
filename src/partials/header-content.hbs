@@ -1,14 +1,18 @@
 <header class="header">
   <nav class="navbar">
     <div class="navbar-brand">
-      <a class="navbar-item" href="{{{or site.url siteRootPath}}}">{{site.title}}</a>
+
+      <a class="navbar-item" href="{{{or site.url (or siteRootUrl siteRootPath)}}}">
+        <img style="height: calc(var(--navbar-height)*0.75)" src="{{{uiRootPath}}}/img/logo.png" alt="{{site.title}}"/>
+      </a>
       {{#if env.SITE_SEARCH_PROVIDER}}
-      <div class="navbar-item search hide-for-print">
-        <div id="search-field" class="field">
-          <input id="search-input" type="text" placeholder="Search the docs"{{#if page.home}} autofocus{{/if}}>
+        <div class="navbar-item search hide-for-print">
+          <div id="search-field" class="field">
+            <input id="search-input" type="text" placeholder="Search the docs"{{#if page.home}} autofocus{{/if}}>
+          </div>
         </div>
-      </div>
       {{/if}}
+
       <button class="navbar-burger" data-target="topbar-nav">
         <span></span>
         <span></span>
@@ -17,28 +21,10 @@
     </div>
     <div id="topbar-nav" class="navbar-menu">
       <div class="navbar-end">
-        <a class="navbar-item" href="#">Home</a>
-        <div class="navbar-item has-dropdown is-hoverable">
-          <a class="navbar-link" href="#">Products</a>
-          <div class="navbar-dropdown">
-            <a class="navbar-item" href="#">Product A</a>
-            <a class="navbar-item" href="#">Product B</a>
-            <a class="navbar-item" href="#">Product C</a>
-          </div>
-        </div>
-        <div class="navbar-item has-dropdown is-hoverable">
-          <a class="navbar-link" href="#">Services</a>
-          <div class="navbar-dropdown">
-            <a class="navbar-item" href="#">Service A</a>
-            <a class="navbar-item" href="#">Service B</a>
-            <a class="navbar-item" href="#">Service C</a>
-          </div>
-        </div>
-        <div class="navbar-item">
-          <span class="control">
-            <a class="button is-primary" href="#">Download</a>
-          </span>
-        </div>
+        <a class="navbar-item" href="https://www.drogue.io" target="_blank">Project</a>
+        <a class="navbar-item" href="https://blog.drogue.io" target="_blank">Blog</a>
+        <a class="navbar-item" href="https://matrix.to/#/#drogue-iot:matrix.org" target="_blank">Chat</a>
+        <a class="navbar-item" href="https://book.drogue.io">Documentation</a>
       </div>
     </div>
   </nav>
